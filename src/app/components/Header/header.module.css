@@ -1,0 +1,49 @@
+.links ul{
+    display: flex;
+    gap: 40px;
+    font-weight: bold;
+    transition-duration: 0.3s;
+}
+.link {
+    transition-duration: 0.3s;
+}
+.link:hover {
+    transform: translateY(-3px);
+}
+
+.register{
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.register:hover{
+    transform: scale(1.03)
+}
+.menu{
+    display: none;
+    cursor: pointer;
+}
+@media (max-width: 960px) {
+    .logo{
+        display: none;
+    }
+    .links ul{
+        display: block;
+        position: absolute;
+        height: 205px;
+        top: 70px;
+        width: 100%;
+        left: 0;
+        z-index: 200;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .link{
+        display: block;
+        padding: 10px 40px;
+    }
+    .menu{
+        display: inline-block;
+    }
+}

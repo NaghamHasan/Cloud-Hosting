@@ -1,0 +1,19 @@
+form > div {
+    position: relative;
+}
+form input:placeholder-shown+label {
+    opacity: 0;
+    position: absolute;
+    top:20px;
+    left: 10px;
+}
+form input:not(:placeholder-shown)+label {
+    opacity: 1;
+    position: absolute;
+    transition: all 0.3s;
+    top: -16px;
+    left: 10px;
+    background-color: #0b0e14;
+    font-size: 15px;
+    color: #94a3b8;
+}

@@ -1,0 +1,13 @@
+@layer utilities {
+    @keyframes arrow-move {
+        from {
+            transform: translateX(0px);
+        }
+        to {
+            transform: translateX(5px);
+        }
+    }
+    .group:hover .arrow-move {
+        animation: arrow-move 0.3s infinite alternate;
+    }
+}
