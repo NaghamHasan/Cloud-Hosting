@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { GetComments } from '@/apiCalls/adminApiCalls';
 import DeleteComment from '@/app/components/comments/DeleteComment';
 import { Comment } from '@/generated/prisma'

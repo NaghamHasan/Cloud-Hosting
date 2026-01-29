@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import React from "react";
 import Hero from "@/app/components/Home/hero";
 import { featuresContent } from "@/utils/featuresContent";

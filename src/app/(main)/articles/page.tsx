@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import ArticleComponent from "@/app/components/Articles/article";
 import Link from "next/link";
 import SearchBar from "@/app/components/Articles/searchBar";

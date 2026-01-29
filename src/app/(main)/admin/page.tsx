@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import ArticleForm from "@/app/components/Admin/articleForm"
 
 const Admin = () => {

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Comment } from "@/generated/prisma";
 import { prisma } from "@/utils/db";
 import { CreateCommentDto } from "@/utils/dtos";
