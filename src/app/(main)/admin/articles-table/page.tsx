@@ -1,9 +1,11 @@
+export const dynamic = "force-dynamic";
+
 import { getArticles, getArticlesCount } from "@/apiCalls/articleApiCall";
 import Pagination from "@/app/components/Articles/pagination";
 import { Article } from "@/generated/prisma";
 import { ARTICLES_PER_PAGE } from "@/utils/constance";
 import Link from "next/link";
-import DeleteArticleButton from "./deleteArticleButton";
+import DeleteArticleButton from "../../../components/Admin/deleteArticleButton";
 
 interface AdminArticlesProps {
   searchParams: Promise<{
