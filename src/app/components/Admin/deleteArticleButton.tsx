@@ -1,5 +1,4 @@
 "use client"
-import { DOMAIN } from "@/utils/constance";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
@@ -12,7 +11,7 @@ const DeleteArticleButton = ({articleId} : DeleteArticleButtonProps) => {
   const handleDelete = () => {
     if (window.confirm("You are delete this article,are you sur?")) {
       axios
-        .delete(`${DOMAIN}/api/articles/${articleId}`)
+        .delete(`/api/articles/${articleId}`)
         .then(() => router.refresh())
         .then(() => toast.success("Article Deleted"))
         .catch((err) => toast.error(err.response.data.message));

@@ -1,7 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import module from "../../components/Header/header.module.css";
-import { DOMAIN } from "@/utils/constance";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import axios from "axios";
@@ -31,7 +29,7 @@ const Form = ({
     } else {
       if (titleFromEditPage === "") {
         axios
-          .post(`${DOMAIN}/api/articles`, { title, description })
+          .post(`/api/articles`, { title, description })
           .then(() => toast.success("Article created"))
           .then(() => {
             setTitle("");
@@ -41,7 +39,7 @@ const Form = ({
           .catch((err) => toast.error(err.response.data.message));
       } else {
         axios
-          .put(`${DOMAIN}/api/articles/${articleId}`, { title, description })
+          .put(`/api/articles/${articleId}`, { title, description })
           .then(() => toast.success("Article updated"))
           .then(() => {
             router.refresh();

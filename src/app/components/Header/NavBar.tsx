@@ -1,8 +1,6 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import React, { useState } from "react";
 import module from "@/app/components/Header/header.module.css";
-import Link from "next/link";
-import { GrTechnology } from "react-icons/gr";
 import { FiMenu } from "react-icons/fi";
 import { IoCloseCircle } from "react-icons/io5";
 import HeaderLink from "./HeaderLink";

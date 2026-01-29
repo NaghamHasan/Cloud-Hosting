@@ -1,5 +1,4 @@
 "use client"
-import { DOMAIN } from '@/utils/constance';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import React from 'react'
@@ -15,7 +14,7 @@ const DeleteComment = ({commentId} : DeleteCommentProps) => {
     
       const handleDelete = () => {
         if(confirm("Are you sure to delete this comment ?"))
-        axios.delete(`${DOMAIN}/api/comments/${commentId}`)
+        axios.delete(`/api/comments/${commentId}`)
         .then(() => router.refresh())
         .then(() => toast.success("Comment Deleted"))
         .catch(err => toast.error(err.response.data.message));

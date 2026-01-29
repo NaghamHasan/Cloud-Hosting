@@ -1,13 +1,10 @@
 "use client";
 import "./form.css";
 import React, { ChangeEvent, useState } from "react";
-import module from "../../components/Header/header.module.css";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { DOMAIN } from "@/utils/constance";
 import ButtonSpinner from "../buttonSpinner";
 import Link from "next/link";
-import { CgArrowLeft } from "react-icons/cg";
 
 interface IsRegister {
   value: boolean;
@@ -42,7 +39,7 @@ const Form = ({ value }: IsRegister) => {
       setLoading(true);
       await axios
         .post(
-          `${DOMAIN}/api/users/${value ? "register" : "login"}`,
+          `/api/users/${value ? "register" : "login"}`,
           value ? { username: name, ...form } : form
         )
         .then(() => {

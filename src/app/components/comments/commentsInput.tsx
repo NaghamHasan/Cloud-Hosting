@@ -1,5 +1,4 @@
 "use client";
-import { DOMAIN } from "@/utils/constance";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -18,7 +17,7 @@ const CommentsInput = ({ articleId }: { articleId: number }) => {
       e.preventDefault();
     } else {
       axios
-        .post(`${DOMAIN}/api/comments`, { text, articleId })
+        .post(`/api/comments`, { text, articleId })
         .then(() => {
           setText("");
           setClick(false);

@@ -1,5 +1,4 @@
 "use client";
-import { DOMAIN } from "@/utils/constance";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, useState, MouseEvent } from "react";
@@ -23,7 +22,7 @@ const UpdateCommentModel = ({ id, text, setOpen }: UpdateCommentModel) => {
       e.preventDefault();
     } else {
       axios
-        .put(`${DOMAIN}/api/comments/${id}`, { text: commentAfterUpdat })
+        .put(`/api/comments/${id}`, { text: commentAfterUpdat })
         .then(() => setOpen(false))
         .then(() => router.refresh())
         .then(() => toast.success("comment updated"))

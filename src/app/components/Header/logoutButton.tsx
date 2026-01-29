@@ -1,5 +1,4 @@
 "use client";
-import { DOMAIN } from "@/utils/constance";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -11,7 +10,7 @@ const LogoutButton = () => {
   const HandleLogout = () => {
     setLoading(true);
     axios
-      .get(`${DOMAIN}/api/users/logout`)
+      .get(`/api/users/logout`)
       .then(() => router.refresh())
       .then(() => setLoading(false))
       .catch((err) => {
