@@ -1,5 +1,4 @@
 const About = () => {
-  console.log("about is called")
   return (
       <div className="container m-auto">
         <h1 className="font-bold text-3xl pt-9">About This App</h1>
