@@ -3,6 +3,7 @@ import Comment from "@/app/components/comments/comment";
 import { ArticleWithComments } from "@/utils/types";
 import { VerifyTokenPages } from "@/utils/verifyToken";
 import { GetSingleArticle } from "@/apiCalls/articleApiCall";
+import Link from "next/link";
 
 interface PropsForm {
   params: Promise<{ id: string }>;
@@ -30,9 +31,9 @@ const ArticleInfo = async ({ params }: PropsForm) => {
             {user ? (
               <CommentsInput articleId={articleInfo.id} />
             ) : (
-              <p className="text-red-500 text-xl font-bold py-4">
+              <Link href={"/login"} className="main-btn inline-block mt-10">
                 Log in to write comment
-              </p>
+              </Link>
             )}
           </div>
           <h1 className="text-xl font-bold py-4 special-text">Comments</h1>
