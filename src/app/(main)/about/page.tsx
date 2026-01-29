@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 const About = () => {
   return (
       <div className="container m-auto">
