@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import ButtonSpinner from "../buttonSpinner";
 import Link from "next/link";
+import { Domain } from "@/utils/constance";
 
 interface IsRegister {
   value: boolean;
@@ -39,7 +40,7 @@ const Form = ({ value }: IsRegister) => {
       setLoading(true);
       await axios
         .post(
-          `/api/users/${value ? "register" : "login"}`,
+          `${Domain}/api/users/${value ? "register" : "login"}`,
           value ? { username: name, ...form } : form
         )
         .then(() => {
@@ -119,11 +120,11 @@ const Form = ({ value }: IsRegister) => {
       >
         {loading ? <ButtonSpinner /> : value ? "Sign up" : "Sign in"}
       </button>
-      {status && (
+      {/* {status && (
         <span className="text-red-700 text-sm absolute left-0 -bottom-5">
           {status}
         </span>
-      )}
+      )} */}
       <div className="text-center mt-9 font-bold">
         {value ? "Already have an account ? " : "New here ? "}
         <Link className="special-text" href={value ? "/login" : "/register"}>

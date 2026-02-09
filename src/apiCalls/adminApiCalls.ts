@@ -1,9 +1,10 @@
 import { Comment } from "@/generated/prisma";
+import { Domain } from "@/utils/constance";
 import { cookies } from "next/headers";
 
 export const GetComments = async () : Promise<Comment[]> => {
     const token = (await cookies()).get("token")?.value;
-      const response = await fetch(`/api/comments`,{
+      const response = await fetch(`${Domain}/api/comments`,{
         headers: {
           Cookie: `token=${token}`
         }

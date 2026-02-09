@@ -23,14 +23,20 @@ const Articles = async ({ searchParams }: Params) => {
     <div className="flex relative justify-center">
       <div className="container flex flex-col">
         <SearchBar />
-        <section className="flex flex-grow items-center justify-center m-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {articles.map((el, key) => (
-              <Link href={`articles/${el.id}`} key={key}>
-                <ArticleComponent article={el} />
-              </Link>
-            ))}
-          </div>
+        <section className="flex flex-grow items-center justify-center">
+          {articles.length === 0 ? (
+            <div className="main-text-color font-bold text-3xl">
+              No Articles exists
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full px-4 md:px-10">
+              {articles.map((el, key) => (
+                <Link href={`articles/${el.id}`} key={key}>
+                  <ArticleComponent article={el} />
+                </Link>
+              ))}
+            </div>
+          )}
         </section>
         <Pagination
           pageNumber={parseInt(pageNumber)}

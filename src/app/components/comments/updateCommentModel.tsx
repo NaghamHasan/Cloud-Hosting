@@ -36,17 +36,17 @@ const UpdateCommentModel = ({ id, text, setOpen }: UpdateCommentModel) => {
   const [commentAfterUpdat, setCommentAfterUpdat] = useState(text);
   return (
     <div className="fixed left-0 top-0 w-[100%] h-[100%] bg-[#00000040] flex items-center justify-center">
-      <div className="bg-gray-50 shadow w-11/12 md:w-1/2 lg:w-1/3 h-1/3 p-4 rounded-lg">
+      <div className="shadow black-bg w-11/12 md:w-1/2 lg:w-1/3 h-1/3 p-4 rounded-lg">
         <div className="close cursor-pointer flex justify-end text-2xl">
-          <IoCloseCircleOutline onClick={() => setOpen(false)} />
+          <IoCloseCircleOutline className="main-text-color" onClick={() => setOpen(false)} />
         </div>
         <div>
-          <h1 className="font-bold text-xl text-[#193d4b]">
+          <h1 className="font-bold text-xl special-text">
             Edit your comment
           </h1>
           <input
             type="text"
-            className="w-full outline-none my-6 shadow p-1 bg-white rounded"
+            className="w-full outline-none my-6 shadow p-1 search-bg text-white rounded"
             value={commentAfterUpdat}
             onChange={(e) => setCommentAfterUpdat(e.target.value)}
           />
@@ -58,7 +58,7 @@ const UpdateCommentModel = ({ id, text, setOpen }: UpdateCommentModel) => {
           <button
             type="submit"
             onClick={updateComment}
-            className="button bg-[#193d4b] p-2 text-white rounded cursor-pointer"
+            className="main-btn"
           >
             Ok
           </button>

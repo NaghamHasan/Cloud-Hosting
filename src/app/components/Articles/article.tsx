@@ -10,7 +10,7 @@ const ArticleComponent = ({ article }: ArticleItemProps) => {
   return (
     // أضفنا h-full لضمان أن الكارد يملأ مساحة الـ Grid المتاحة
     // وأضفنا flex flex-col لتوزيع العناصر داخله عمودياً
-    <div className="relative group h-full flex flex-col glass-bg text-center hover:-translate-y-3 transition-transform rounded-2xl p-6">
+    <div className="relative w-full group h-full flex flex-col glass-bg text-center hover:-translate-y-3 transition-transform rounded-2xl p-6">
       <div className="relative z-9 flex flex-col h-full">
         <h1 className="text-xl font-bold line-clamp-1 main-text-color mb-3">
           {article.title}

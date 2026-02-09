@@ -7,11 +7,10 @@ import DeleteComment from "./DeleteComment";
 
 interface CommentProps {
   comment: CommentWithUsername;
-  userId: number | undefined
+  userId: number | undefined;
 }
 
-const Comment = ({ comment ,userId }: CommentProps) => {
-  
+const Comment = ({ comment, userId }: CommentProps) => {
   const [open, setOpen] = useState(false);
   return (
     <div className="w-[100%] p-5 glass-bg shadow-lg rounded mb-3 m-auto">
@@ -21,15 +20,27 @@ const Comment = ({ comment ,userId }: CommentProps) => {
           {new Date(comment.createdAt).toDateString()}
         </span>
       </div>
-      <div className="second-text-color pt-4">{comment.text}</div>
-      {userId && userId === comment.userId ? <div className="flex items-center justify-end gap-5">
-        <MdModeEditOutline
-          onClick={() => setOpen(true)}
-          className="special-text cursor-pointer"
-        />
-        <DeleteComment commentId={comment.id}/>
-      </div> : ""}
-      {open && <UpdateCommentModel id={comment.id.toString()} text={comment.text} setOpen={setOpen}/>}
+      <div className="flex items-center justify-between items-center">
+        <div className="second-text-color pt-4">{comment.text}</div>
+        {userId && userId === comment.userId ? (
+          <div className="flex items-center justify-end gap-5">
+            <MdModeEditOutline
+              onClick={() => setOpen(true)}
+              className="special-text cursor-pointer"
+            />
+            <DeleteComment commentId={comment.id} />
+          </div>
+        ) : (
+          ""
+        )}
+        {open && (
+          <UpdateCommentModel
+            id={comment.id.toString()}
+            text={comment.text}
+            setOpen={setOpen}
+          />
+        )}
+      </div>
     </div>
   );
 };

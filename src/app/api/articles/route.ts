@@ -25,9 +25,9 @@ export async function GET(request: NextRequest) {
         createdAt: "desc"
       }
     });
-    if(articles.length === 0){
-      return NextResponse.json({message:"Not Found"}, { status: 404 });
-    }
+    // if(articles.length === 0){
+    //   return NextResponse.json({message:"Not Found"}, { status: 404 });
+    // }
     return NextResponse.json(articles, { status: 200 });
   } catch (e) {
     return NextResponse.json({ message: e }, { status: 500 });

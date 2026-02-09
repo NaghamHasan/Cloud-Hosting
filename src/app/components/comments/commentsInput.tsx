@@ -31,7 +31,7 @@ const CommentsInput = ({ articleId }: { articleId: number }) => {
     <form className="flex  items-center w-full mt-8">
       <div className="w-full md:w-75 relative m-auto h-[100px]">
         <input
-          className="w-[100%] search-bg placeholder:text-[#94a3b8] shadow outline-none rounded p-2"
+          className="w-[100%] search-bg placeholder:text-[#94a3b8] text-white shadow outline-none rounded p-2"
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}

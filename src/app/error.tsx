@@ -17,7 +17,7 @@ function error({ error, reset }: ErrorType) {
           Something went <span className="special-text">wrong</span>
         </h2>
         <p className="text-blue-200/60 text-lg max-w-md mx-auto mb-10 first-letter:uppercase">
-          {error.message}
+          {JSON.stringify(error.message)}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link href="/" className="main-btn">
